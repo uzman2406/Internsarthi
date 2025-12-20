@@ -1,0 +1,19 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<h2>Saved Internships</h2>
+
+<div class="card-grid">
+{% for item in saved %}
+    <div class="card">
+        <h3>{{ item.internship.role }}</h3>
+        <p>{{ item.internship.company_name }}</p>
+        <div class="actions">
+        <a class="btn apply" href="{% url 'apply_internship' item.internship.id %}">Apply</a>
+        </div>
+    </div>
+{% empty %}
+    <p>No saved internships yet.</p>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<h2>Applied Internships</h2>
+
+<div class="card-grid">
+{% for item in applied %}
+    <div class="card">
+        <h3>{{ item.internship.role }}</h3>
+        <p>{{ item.internship.company_name }}</p>
+        <p><small>Applied on {{ item.applied_at }}</small></p>
+    </div>
+{% empty %}
+    <p>No applications yet.</p>
+{% endfor %}
+</div>
+{% endblock %}

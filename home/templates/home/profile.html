@@ -1,0 +1,497 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-card">
+        <!-- Header Section -->
+        <div class="profile-header">
+            <div class="profile-icon">
+                <i class="fas fa-user-edit"></i>
+            </div>
+            <h1>Complete Your Profile</h1>
+            <p class="profile-subtitle">Tell us about your skills and preferences to get personalized internship recommendations</p>
+        </div>
+
+        <form method="post" class="profile-form">
+            {% csrf_token %}
+
+            <!-- SKILLS SECTION -->
+            <div class="form-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-code"></i> Your Technical Skills</h3>
+                    <p class="section-subtitle">Select all that apply</p>
+                </div>
+                <div class="skills-grid">
+                    <!-- Fixed skill list without templating syntax -->
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="Python">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">Python</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="Machine Learning">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">Machine Learning</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="Data Science">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">Data Science</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="Django">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">Django</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="Web Development">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">Web Development</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="Java">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">Java</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="SQL">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">SQL</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="Digital Marketing">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">Digital Marketing</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="React">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">React</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="JavaScript">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">JavaScript</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="C++">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">C++</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="UI/UX Design">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">UI/UX Design</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="Cloud Computing">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">Cloud Computing</span>
+                    </label>
+                    <label class="skill-checkbox">
+                        <input type="checkbox" name="skills" value="DevOps">
+                        <span class="checkbox-custom"></span>
+                        <span class="skill-label">DevOps</span>
+                    </label>
+                </div>
+                <div class="form-note">
+                    <i class="fas fa-lightbulb"></i> The more skills you select, the better our recommendations will be
+                </div>
+            </div>
+
+            <!-- PREFERENCES SECTION -->
+            <div class="preferences-grid">
+                <!-- ROLE -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-briefcase"></i>
+                        Preferred Role
+                    </label>
+                    <div class="select-wrapper">
+                        <select name="preferred_role" class="form-select" required>
+                            <option value="">Choose your preferred role</option>
+                            <option value="Machine Learning Intern"> Machine Learning Intern</option>
+                            <option value="Data Science Intern"> Data Science Intern</option>
+                            <option value="Web Development Intern"> Web Development Intern</option>
+                            <option value="Backend Developer Intern"> Backend Developer Intern</option>
+                            <option value="Frontend Developer Intern"> Frontend Developer Intern</option>
+                            <option value="Full Stack Developer Intern"> Full Stack Developer Intern</option>
+                            <option value="Digital Marketing Intern">Digital Marketing Intern</option>
+                            <option value="Business Analyst Intern"> Business Analyst Intern</option>
+                            <option value="DevOps Intern"> DevOps Intern</option>
+                            <option value="Mobile App Developer Intern"> Mobile App Developer Intern</option>
+                        </select>
+                        <i class="fas fa-chevron-down select-arrow"></i>
+                    </div>
+                </div>
+
+                <!-- LOCATION -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Preferred Location
+                    </label>
+                    <div class="select-wrapper">
+                        <select name="location" class="form-select" required>
+                            <option value="">Select your preferred location</option>
+                            <option value="Remote"> Remote</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai"> Mumbai</option>
+                            <option value="Bangalore"> Bangalore</option>
+                            <option value="Pune"> Pune</option>
+                            <option value="Hyderabad"> Hyderabad</option>
+                            <option value="Chennai"> Chennai</option>
+                            <option value="Other"> Other</option>
+                        </select>
+                        <i class="fas fa-chevron-down select-arrow"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    Save Profile & Get Recommendations
+                </button>
+                <p class="action-note">
+                    <i class="fas fa-shield-alt"></i>
+                    Your information is secure and will only be used for matching you with relevant internships
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Main Container */
+    .profile-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    /* Card Styling */
+    .profile-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+        max-width: 800px;
+        width: 100%;
+        margin: 20px;
+    }
+
+    /* Header */
+    .profile-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .profile-icon {
+        font-size: 48px;
+        color: #4a6cf7;
+        margin-bottom: 20px;
+    }
+
+    .profile-header h1 {
+        color: #2d3748;
+        font-size: 32px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .profile-subtitle {
+        color: #718096;
+        font-size: 16px;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* Form Sections */
+    .form-section {
+        margin-bottom: 40px;
+        background: #f8fafc;
+        padding: 25px;
+        border-radius: 15px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .section-header {
+        margin-bottom: 20px;
+    }
+
+    .section-header h3 {
+        color: #2d3748;
+        font-size: 20px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-header h3 i {
+        color: #4a6cf7;
+    }
+
+    .section-subtitle {
+        color: #718096;
+        font-size: 14px;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .skill-checkbox {
+        display: flex;
+        align-items: center;
+        padding: 12px 15px;
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .skill-checkbox:hover {
+        border-color: #4a6cf7;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(74, 108, 247, 0.1);
+    }
+
+    .skill-checkbox input[type="checkbox"] {
+        display: none;
+    }
+
+    .skill-checkbox input[type="checkbox"]:checked + .checkbox-custom {
+        background-color: #4a6cf7;
+        border-color: #4a6cf7;
+    }
+
+    .skill-checkbox input[type="checkbox"]:checked + .checkbox-custom::after {
+        content: '✓';
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+    }
+
+    .checkbox-custom {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #cbd5e0;
+        border-radius: 5px;
+        margin-right: 12px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .skill-label {
+        font-size: 15px;
+        color: #2d3748;
+        font-weight: 500;
+    }
+
+    /* Form Note */
+    .form-note {
+        background: #e6f3ff;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #2c5282;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .form-note i {
+        color: #4299e1;
+    }
+
+    /* Preferences Grid */
+    .preferences-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    .form-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        color: #2d3748;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .form-label i {
+        color: #4a6cf7;
+    }
+
+    /* Select Styling */
+    .select-wrapper {
+        position: relative;
+    }
+
+    .form-select {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 15px;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        background: white;
+        color: #2d3748;
+        appearance: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .form-select:focus {
+        outline: none;
+        border-color: #4a6cf7;
+        box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+    }
+
+    .select-arrow {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #718096;
+        pointer-events: none;
+    }
+
+    /* Button Styling */
+    .form-actions {
+        text-align: center;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #4a6cf7 0%, #6a8cff 100%);
+        color: white;
+        border: none;
+        padding: 16px 32px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(74, 108, 247, 0.4);
+    }
+
+    .btn-primary:active {
+        transform: translateY(0);
+    }
+
+    /* Action Note */
+    .action-note {
+        margin-top: 20px;
+        color: #718096;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .profile-card {
+            padding: 25px;
+            margin: 10px;
+        }
+
+        .profile-header h1 {
+            font-size: 28px;
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+
+        .preferences-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .form-section {
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .btn-primary {
+            padding: 14px 24px;
+            font-size: 15px;
+        }
+    }
+</style>
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script>
+    // Add skill selection counter
+    document.addEventListener('DOMContentLoaded', function() {
+        const checkboxes = document.querySelectorAll('input[name="skills"]');
+        const formNote = document.querySelector('.form-note');
+        
+        function updateSelectionCount() {
+            const selected = document.querySelectorAll('input[name="skills"]:checked').length;
+            formNote.innerHTML = ` ${selected} skill${selected !== 1 ? 's' : ''} selected • The more skills you select, the better our recommendations will be`;
+        }
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateSelectionCount);
+        });
+        
+        // Initialize count
+        updateSelectionCount();
+        
+        // Form submission validation
+        document.querySelector('.profile-form').addEventListener('submit', function(e) {
+            const selectedSkills = document.querySelectorAll('input[name="skills"]:checked').length;
+            if (selectedSkills === 0) {
+                e.preventDefault();
+                alert('Please select at least one skill to get better recommendations!');
+                return false;
+            }
+        });
+    });
+</script>
+{% endblock %}

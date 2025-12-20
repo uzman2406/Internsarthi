@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<h2>Recommended Internships</h2>
+
+<div class="card-grid">
+{% for internship in internships %}
+    <div class="card">
+        <h3>{{ internship.role }}</h3>
+        <p><strong>Company:</strong> {{ internship.company_name }}</p>
+        <p><strong>Skills:</strong> {{ internship.skills }}</p>
+        <p><strong>Location:</strong> {{ internship.location }}</p>
+
+        <div class="actions">
+            <a class="btn" href="{% url 'save_internship' internship.id %}">Save</a>
+            <a class="btn apply" href="{% url 'apply_internship' internship.id %}">Apply</a>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
