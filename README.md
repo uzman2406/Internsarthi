@@ -38,7 +38,7 @@
 1. **Clone the repository**
 
 
-git clone https://github.com/your-username/internsarthi.git
+git clone https://github.com/uzman2406/internsarthi.git
 cd internsarthi
 
 Create a virtual environment
