@@ -38,26 +38,26 @@
 ## Installation
 
 1. **Clone the repository**
-
+```
 
 git clone https://github.com/uzman2406/internsarthi.git
 cd internsarthi
 
-Create a virtual environment
+#Create a virtual environment
 
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
 
-Install dependencies
+#Install dependencies
 
 pip install -r requirements.txt
 
-Apply migrations
+#Apply migrations
 
 python manage.py migrate
 
-
-Run the development server
+#Run the development server
 
 python manage.py runserver
+```
