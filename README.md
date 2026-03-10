@@ -15,12 +15,14 @@
 ---
 
 ## Screenshots
+<img width="1919" height="832" alt="image" src="https://github.com/user-attachments/assets/ac08e304-4606-4492-b236-849df69d0f38" />
 
-*(Add your project screenshots here)*
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e3c4e6a3-9567-4e31-b45f-8bf2bc6cc907" />
 
-- Dashboard/Profile page
-- Saved Internships page
-- Internship browsing page
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8338d157-2dc7-4e79-bcb7-0cbb27a6a6af" />
+
+<img width="1919" height="831" alt="image" src="https://github.com/user-attachments/assets/c91ba718-b2f8-4d78-84c3-22ec0b5c2d8b" />
+
 
 ---
 
